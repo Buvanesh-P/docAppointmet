@@ -82,7 +82,7 @@ class UserController extends Controller
     public function show()
     {
 
-        $userAppoint =  Appointment::with('user','doctor')->get();
+        $userAppoint =  Appointment::with('user','doctor')->where('users_id',Auth::id())->get();
        //return $userAppoint;
 
         return view('myAppointments',compact('userAppoint'));
