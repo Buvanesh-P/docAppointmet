@@ -8,6 +8,7 @@ use App\specialized;
 use App\Doctor;
 use App\Appointment;
 use App\User;
+use Illuminate\Support\Facades\App;
 use PhpParser\Node\Expr\New_;
 
 class UserController extends Controller
@@ -81,7 +82,8 @@ class UserController extends Controller
     public function show()
     {
 
-        $userAppoint =  User::find(Auth::id())->appointment;
+        $userAppoint =  Appointment::with('user','doctor')->get();
+       //return $userAppoint;
 
         return view('myAppointments',compact('userAppoint'));
 

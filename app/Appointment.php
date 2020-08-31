@@ -11,4 +11,14 @@ class Appointment extends Model
         'date','time',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo('App\User','users_id');
+    }
+
+    public function doctor()
+    {
+        return $this->belongsTo('App\Doctor','doctors_id');
+    }
+
 }

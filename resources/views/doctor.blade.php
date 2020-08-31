@@ -4,6 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <a href="home" class="btn btn-primary">Back</a><br><br>
+
             <div class="card">
                 <div class="card-header">{{ __(' Appointment Form') }}</div>
 
